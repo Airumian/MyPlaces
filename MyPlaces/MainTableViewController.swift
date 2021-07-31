@@ -9,14 +9,21 @@ import UIKit
 
 class MainTableViewController: UITableViewController {
 
-	let restarauntNames = ["Burger Heroes", "Kitchen",
-						   "Bonsai", "Дастархан",
-						   "Индокитай", "Х.О",
-						   "Балкан Гриль", "Sherlock Holmes",
-						   "Speak Easy", "Morris Pub",
-						   "Вкусные истории","Классик",
-						   "Love&Life", "Шок",
-						   "Бочка"]
+	let restarauntNames = [
+		"Burger Heroes",
+		"Kitchen","Bonsai",
+		"Дастархан",
+		"Индокитай",
+		"Х.О",
+		"Балкан Гриль",
+		"Sherlock Holmes",
+		"Speak Easy",
+		"Morris Pub",
+		"Вкусные истории",
+		"Классик",
+		"Love&Life",
+		"Шок",
+		"Бочка"]
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,11 +36,11 @@ class MainTableViewController: UITableViewController {
 	}
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-		cell.textLabel?.text = restarauntNames[indexPath.row]
-		cell.imageView?.image = UIImage(named:restarauntNames[indexPath.row])
-		cell.imageView?.layer.cornerRadius = cell.frame.size.height / 2
-		cell.imageView?.clipsToBounds = true
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomTableViewCell
+		cell.nameLabel.text = restarauntNames[indexPath.row]
+		cell.imageOfPlace.image = UIImage(named:restarauntNames[indexPath.row])
+		cell.imageOfPlace.layer.cornerRadius = cell.imageOfPlace.frame.size.height / 2
+		cell.imageOfPlace.clipsToBounds = true
 		return cell
     }
 	
