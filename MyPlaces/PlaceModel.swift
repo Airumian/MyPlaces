@@ -25,6 +25,5 @@ struct Place {
 			
 		}
 		return places
-		
 	}
 }

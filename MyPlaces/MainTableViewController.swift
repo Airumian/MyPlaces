@@ -31,4 +31,6 @@ class MainTableViewController: UITableViewController {
 		cell.imageOfPlace.clipsToBounds = true
 		return cell
 	}
+	
+	@IBAction func cancelAction(_ segue: UIStoryboardSegue) {}
 }
